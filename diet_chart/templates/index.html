@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+	<form action="{% url 'app:Pulp' %}" method='post'>
+		{% csrf_token %}
+		<ul>
+			<table>
+				<tr>
+					<td>
+						<label>
+							Vegetables
+						</label>
+					</td>
+					<td>
+						<select name='veg_id' style="max-width: 19%;" required>
+							<option value>Please Select Vegetables</option>
+							{% for i in Veg %}
+								<option value="{{i.id}}">{{i.name}}</option>
+							{% endfor %}	
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>
+							Grains and Pasta
+						</label>
+					</td>
+					<td>
+						<select name='grain_id' style="max-width: 19%;" required>
+							<option value>Please Select Grains and Pasta</option>
+							{% for i in Grain %}
+								<option value="{{i.id}}">{{i.name}}</option>
+							{% endfor %}	
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>
+							Fats and Oils
+						</label>
+					</td>
+					<td>
+						<select name='fat_id' style="max-width: 19%;" required>
+							<option value>Please Select Fats and Oils</option>
+							{% for i in Fat %}
+								<option value="{{i.id}}">{{i.name}}</option>
+							{% endfor %}	
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>
+							Meats
+						</label>
+					</td>
+					<td>
+						<select name='meat_id' style="max-width: 19%;" required>
+							<option value>Please Select Meats</option>
+							{% for i in Meat %}
+								<option value="{{i.id}}">{{i.name}}</option>
+							{% endfor %}	
+						</select>
+					</td>
+				<tr>
+					<td>
+						<label>
+							Dairy and Egg Products
+						</label>
+					</td>
+					<td>
+						<select name='dairy_id' style="max-width: 19%;" required>
+							<option value>Please Select Dairy and Egg Products</option>
+							{% for i in Dairy %}
+								<option value="{{i.id}}">{{i.name}}</option>
+							{% endfor %}	
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>
+							Protein Calories
+						</label>
+					</td>
+					<td>
+						<input type="text" name="pro_cal" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>
+							 Carbohydrate Calories
+						</label>
+					</td>
+					<td>
+						<input type="text" name="car_cal" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>
+							Fat Calories
+						</label>
+					</td>
+					<td>
+						<input type="text" name="fat_cal" required>
+					</td>
+				</tr>
+			</table>
+		<input type="submit" value="Submit">	
+		</ul>
+	</form>
+</body> 
+</html>

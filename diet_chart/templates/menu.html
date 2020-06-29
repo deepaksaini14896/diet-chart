@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>
+				<center>
+					Diet Plan
+				</center>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<br>
+				<br>
+					Breakfast
+				<br>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			{% for i in breakfast %}
+				<td>
+					{{i.name}}
+				</td>
+			{% endfor %}
+			{% for i in breakfast %}
+				<td>
+					 {{i.varValue}}gm
+				</td>
+			{% endfor %}
+		</tr>
+		<tr>
+			<td>
+				<br>
+				<br>
+				Lunch
+				<br>
+				<br>
+			</td>
+		</tr>
+		{% for i in lunch %}
+			<tr>
+				<td>
+					{{i.name}}
+				</td>
+				<td>
+					 {{i.varValue}}gm
+				</td>
+			</tr>
+		{% endfor %}
+		<tr>
+			<td>
+				<br>
+				<br>
+				Dinner
+				<br>
+				<br>
+			</td>
+		</tr>
+		{% for i in dinner %}
+			<tr>
+				<td>
+					{{i.name}}
+				</td>
+				<td>
+					 {{i.varValue}}gm
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+</body> 
+</html>
